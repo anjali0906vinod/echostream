@@ -1,7 +1,7 @@
-EchoStream — End-to-End Spotify Music Data Engineering Pipeline
+EchoStream — Spotify Music Data Engineering & Analytics Pipeline
 Python • Azure SQL Database • Power BI • Data Engineering
 
- OVERVIEW 
+ 📢Overview
 
 EchoStream is an end-to-end data engineering & analytics project built on Spotify music data, designed to simulate a real industry-level data pipeline.
 
@@ -9,7 +9,7 @@ The project takes raw Spotify track & artist data, processes it through an ETL w
 
 This project is currently under development, with components being added in phases.
 
-OBJECTIVES 
+💡Objectives
 
 Build a working ETL pipeline with Python
 
@@ -25,7 +25,7 @@ Build a Power BI dashboard connected directly to Azure SQL
 
 Document the entire pipeline in a clear, industry-style structure 
 
-ARCHITECTURE 
+🗼ARCHITECTURE 
 ```
            ┌────────────────────┐
            │  Spotify Dataset   │
@@ -51,7 +51,7 @@ ARCHITECTURE
            │   Power BI Report  │
            └────────────────────┘
 ```
-PROJECT OVERVIEW 
+⬇️PROJECT OVERVIEW 
 1. Layer	Tech Used	Purpose
 2. Ingestion	Python, APIs / CSVs	Collect raw music streaming data
 3. Processing	Pandas, NumPy	Clean + transform data into usable tables
@@ -60,7 +60,7 @@ PROJECT OVERVIEW
 6. Dashboard	Power BI	Build a clean, interactive dashboard
 7. Orchestration (Future)	Airflow	Automate the entire pipeline
 
-Key Features (Planned)
+🔔Key Features (Planned)
 
 ✔ Data ingestion pipeline for music metadata and streaming logs
 
@@ -74,18 +74,18 @@ Key Features (Planned)
 
 ✔ Power BI dashboard for metrics like:
 
-Top artists
+✔ Top artists
 
-Most streamed genres
+✔ Most streamed genres
 
-Listener habits & trends
+✔ Listener habits & trends
 
-Daily/Monthly stream patterns
+✔ Daily/Monthly stream patterns
 
-End-to-end automation with Airflow 
+✔ End-to-end automation with Airflow 
 
 
- PROJECT STRUCTURE 
+🎯 PROJECT STRUCTURE 
  
 ```
 EchoStream/
@@ -109,7 +109,7 @@ EchoStream/
 │
 └── README.md
 ```
-TECH STACK : 
+🔽TECH STACK : 
 
 1. Python (Pandas, NumPy, Requests)
 2. Azure SQL Database
@@ -118,7 +118,7 @@ TECH STACK :
 5. Git & GitHub
 6. Airflow 
 
-CURRENT STATUS 
+🔽CURRENT STATUS 
 
 🔹 Project setup in progress
 🔹 README initialized
