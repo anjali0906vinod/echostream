@@ -1,130 +1,167 @@
-EchoStream — Spotify Music Data Engineering & Analytics Pipeline
-Python • Azure SQL Database • Power BI • Data Engineering
+🎵 EchoStream — Spotify Analytics & ETL Pipeline Dashboard
 
- 📢Overview
+An end-to-end Data Engineering & Analytics Project built using Spotify music data.
+EchoStream transforms raw track data into a clean SQLite database and visualizes powerful insights through an interactive Streamlit dashboard.
 
-EchoStream is an end-to-end data engineering & analytics project built on Spotify music data, designed to simulate a real industry-level data pipeline.
+🚀 Project Overview
 
-The project takes raw Spotify track & artist data, processes it through an ETL workflow in Python, loads it into Azure SQL Database, and visualizes insights through an interactive Power BI dashboard.
+EchoStream is designed to mimic a real-world BI/Data Engineering workflow:
 
-This project is currently under development, with components being added in phases.
+Raw Data → ETL Pipeline → SQLite Database → Streamlit Dashboard → Insights
 
-💡Objectives
+This project highlights:
 
-Build a working ETL pipeline with Python
+Data cleaning & transformation
 
-Clean, transform, and structure Spotify data
+Database creation & management
 
-Create & manage a cloud database with Azure SQL
+SQL querying
 
-Design normalized tables for analytics
+Interactive analytics dashboards
 
-Write SQL queries to explore trends
+Visual storytelling with audio features
 
-Build a Power BI dashboard connected directly to Azure SQL
+🏗️ Architecture Diagram
+                +----------------+
+                |     Raw CSV    |
+                +----------------+
+                        |
+                        v
+        +-------------------------------+
+        |         Extract (Pandas)       |
+        +-------------------------------+
+                        |
+                        v
+        +-------------------------------+
+        |    Transform (Cleaning, EDA)   |
+        +-------------------------------+
+                        |
+                        v
+        +-------------------------------+
+        |      Load (SQLite DB)         |
+        +-------------------------------+
+                        |
+                        v
+        +-------------------------------+
+        |   Streamlit Analytics App     |
+        +-------------------------------+
 
-Document the entire pipeline in a clear, industry-style structure 
+💾 Tech Stack
 
-🗼ARCHITECTURE 
-```
-           ┌────────────────────┐
-           │  Spotify Dataset   │
-           └─────────┬──────────┘
-                     │
-              (Ingestion - Python)
-                     │
-           ┌─────────▼─────────┐
-           │   Data Cleaning    │
-           │   & Transformation │
-           └─────────┬─────────┘
-                     │
-            (Load to Azure SQL)
-                     │
-           ┌─────────▼─────────┐
-           │  Azure SQL DB      │
-           │ (Fact & Dimension) │
-           └─────────┬─────────┘
-                     │
-           (Connect from Power BI)
-                     │
-           ┌─────────▼─────────┐
-           │   Power BI Report  │
-           └────────────────────┘
-```
-⬇️PROJECT OVERVIEW 
-1. Layer	Tech Used	Purpose
-2. Ingestion	Python, APIs / CSVs	Collect raw music streaming data
-3. Processing	Pandas, NumPy	Clean + transform data into usable tables
-4. Storage	Azure SQL Database	Store facts & dimensions for querying
-5. Analytics	SQL queries	Generate insights on streams, artists, genres
-6. Dashboard	Power BI	Build a clean, interactive dashboard
-7. Orchestration (Future)	Airflow	Automate the entire pipeline
+Python
 
-🔔Key Features (Planned)
+pandas, numpy
 
-✔ Data ingestion pipeline for music metadata and streaming logs
+SQLAlchemy
 
-✔ Data cleaning and transformation using Pandas
+plotly, streamlit
 
-✔ Star schema design (fact + dimension tables)
+SQLite
 
-✔ Load final tables into Azure SQL
+Streamlit
 
-✔ Complex SQL queries for analytics
+VS Code
 
-✔ Power BI dashboard for metrics like:
+Github
 
-✔ Top artists
-
-✔ Most streamed genres
-
-✔ Listener habits & trends
-
-✔ Daily/Monthly stream patterns
-
-✔ End-to-end automation with Airflow 
-
-
-🎯 PROJECT STRUCTURE 
- 
-```
-EchoStream/
-│
-├── src/
-│   ├── ingestion/
-│   ├── transformation/
-│   ├── load/
-│   └── utils/
-│
-├── sql/
-│   ├── schema.sql
-│   ├── queries.sql
-│
-├── dashboards/
-│   └── PowerBI/
+📂 Project Structure
+ECHOSTREAM/
 │
 ├── data/
 │   ├── raw/
-│   └── processed/
+│   ├── cleaned/
+│   └── db/spotify.db
+│
+├── src/
+│   ├── extract.py
+│   ├── transform.py
+│   └── load.py
+│
+├── sql/
+│   ├── schema.sql
+│   └── queries.sql
+│
+├── dashboards/
+│   ├── app.py
+│   └── screenshots/
+│       ├── header_kpis.png
+│       ├── genre_popularity.png
+│       ├── audio_features.png
+│       ├── correlation_heatmap.png
+│       ├── tempo_distribution.png
+│       └── popularity_energy_scatter.png
 │
 └── README.md
-```
-🔽TECH STACK : 
 
-1. Python (Pandas, NumPy, Requests)
-2. Azure SQL Database
-3. Power BI
-4. SQL (Joins, Window Functions, CTEs, Aggregations)
-5. Git & GitHub
-6. Airflow 
+🧼 ETL Pipeline Summary
+1. Extract
 
-🔽CURRENT STATUS 
+Load raw CSV data into pandas
 
-🔹 Project setup in progress
-🔹 README initialized
-🔹 Data schema + pipeline design next
+Handle missing values
 
-📬 Contact
-Anjali Vinod
-BCA 3rd Year — Data Science
-Email: anjali2006vinod@gmail.com
+Standardize column names
+
+2. Transform
+
+Remove duplicates
+
+Convert data types
+
+Clean genres & artists
+
+Feature engineering (optional)
+
+3. Load
+
+Create a SQLite database (spotify.db)
+
+Load cleaned dataframe into table spotify_tracks
+
+Use SQLAlchemy for DB operations
+
+📊 Dashboard Features
+
+Your Streamlit dashboard includes:
+
+✔ KPI Metrics
+
+Total Tracks
+
+Unique Artists
+
+Genres Count
+
+✔ Genre Analytics
+
+Popularity by Genre
+
+Audio Features (Danceability, Energy, Valence)
+
+✔ Audio Insights
+
+Correlation Heatmap
+
+Tempo Distribution
+
+Energy vs Danceability Scatter
+
+Scatter Matrix for audio features
+
+✔ Popular Song Insights
+
+Top 10 Most Popular Songs
+
+🖼️ Dashboard Screenshots
+Dashboard Header + KPIs
+![KPIs](dashboards/screenshots/kpi_features.png.png)
+Genre Popularity
+![Genre Popularity](dashboards/screenshots/genre_popularity.png.png)
+Audio Features by Genre
+![Audio Popularity](dashboards/screenshots/audio_features_by_genre.png.png)
+Correlation Heatmap
+![Correlation Heatmap](dashboards/screenshots/audio_feature_correlation_map.png.png)
+Tempo Distribution
+![Tempo Distribution](dashboards/screenshots/tempo_distribution.png.png)
+Popularity & Energy Scatter
+![Popularity & energy scatter](dashboards/screenshots/popularity_and_audio_features.png.png)
