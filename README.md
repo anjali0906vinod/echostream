@@ -22,6 +22,7 @@ Interactive analytics dashboards
 Visual storytelling with audio features
 
 🏗️ Architecture Diagram
+
                 +----------------+
                 |     Raw CSV    |
                 +----------------+
@@ -65,6 +66,7 @@ VS Code
 Github
 
 📂 Project Structure
+
 ECHOSTREAM/
 │
 ├── data/
@@ -165,3 +167,4 @@ Tempo Distribution
 ![Tempo Distribution](dashboards/screenshots/tempo_distribution.png.png)
 Popularity & Energy Scatter
 ![Popularity & energy scatter](dashboards/screenshots/popularity_and_audio_features.png.png)
+
